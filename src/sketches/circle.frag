@@ -16,7 +16,15 @@ float circle(vec2 position, float radius) {
 void main() {
     vec2 position = gl_FragCoord.xy;
 
-    float shape = circle(position, u_canvas.x / 5.);
+    float radius = u_canvas.x / 8.;
+    float speed = u_time * 1.5;
+    float velocity = sin(speed + sin(speed)) * radius * 1.5;
+    float posX = position.x + velocity;
+
+    vec2 dynamicPosition = vec2(posX, position.y);
+    float dynamicRadius = radius + cos(speed + sin(speed)) * radius / 3.;
+
+    float shape = circle(dynamicPosition, dynamicRadius);
     vec3 color = vec3(shape, shape, 1.);
 
     gl_FragColor = vec4(color, 1.0);
