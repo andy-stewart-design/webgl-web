@@ -3,6 +3,7 @@ precision highp float;
 #endif
 
 uniform vec2 u_resolution;
+uniform vec2 u_canvas;
 uniform float u_time;
 
 float square(vec2 position, float size) {
