@@ -32,6 +32,7 @@ function init() {
 
     console.log(app);
   });
+
   resizeObserver.observe(app);
 }
 
