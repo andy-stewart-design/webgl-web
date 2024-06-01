@@ -11,6 +11,9 @@ importers:
       glslCanvas:
         specifier: ^0.2.6
         version: 0.2.6
+      just-debounce-it:
+        specifier: ^3.2.0
+        version: 3.2.0
     devDependencies:
       typescript:
         specifier: ^5.2.2
@@ -264,6 +267,9 @@ packages:
   is-function@1.0.2:
     resolution: {integrity: sha512-lw7DUp0aWXYg+CBCN+JKkcE0Q2RayZnSvnZBlwgxHBQhqt5pZNVy4Ri7H9GmmXkdu7LUthszM+Tor1u/2iBcpQ==}
 
+  just-debounce-it@3.2.0:
+    resolution: {integrity: sha512-WXzwLL0745uNuedrCsCs3rpmfD6DBaf7uuVwaq98/8dafURfgQaBsSpjiPp5+CW6Vjltwy9cOGI6qE71b3T8iQ==}
+
   min-document@2.19.0:
     resolution: {integrity: sha512-9Wy1B3m3f66bPPmU5hdA4DR4PB2OfDU/+GS3yAB7IQozE3tqXaVv2zOjgla7MEGSRv95+ILmOuvhLkOK6wJtCQ==}
 
@@ -497,6 +503,8 @@ snapshots:
       xhr: 2.6.0
 
   is-function@1.0.2: {}
+
+  just-debounce-it@3.2.0: {}
 
   min-document@2.19.0:
     dependencies:

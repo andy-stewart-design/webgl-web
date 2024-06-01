@@ -1,4 +1,5 @@
 import GlslCanvas from "glslCanvas";
+import debounce from "just-debounce-it";
 import frag from "./sketches/circle.frag?raw";
 import "./main.css";
 
@@ -12,8 +13,8 @@ function init() {
 
   const appSize = app.getBoundingClientRect();
   const canvas = document.createElement("canvas");
-  canvas.width = appSize.width - 100;
-  canvas.height = appSize.height - 100;
+  canvas.width = appSize.width;
+  canvas.height = appSize.height;
   canvas.style.width = `${canvas.width}px`;
   canvas.style.height = `${canvas.height}px`;
 
@@ -24,16 +25,22 @@ function init() {
 
   const resizeObserver = new ResizeObserver((entries) => {
     const [app] = entries;
-
-    canvas.width = app.borderBoxSize[0].inlineSize - 100;
-    canvas.height = app.borderBoxSize[0].blockSize - 100;
-    canvas.style.width = `${canvas.width}px`;
-    canvas.style.height = `${canvas.height}px`;
-
-    console.log(app);
+    const width = app.contentRect.width;
+    const height = app.contentRect.height;
+    debouncedSetCanvas(canvas, width, height);
   });
 
   resizeObserver.observe(app);
 }
+
+const debouncedSetCanvas = debounce(
+  (canvas: HTMLCanvasElement, width: number, height: number) => {
+    canvas.width = width;
+    canvas.height = height;
+    canvas.style.width = `${canvas.width}px`;
+    canvas.style.height = `${canvas.height}px`;
+  },
+  50
+);
 
 init();
