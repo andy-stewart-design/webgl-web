@@ -1,8 +1,11 @@
 body {
-  display: grid;
-  place-items: center;
-  min-height: 100lvh;
   background: black;
   padding: 0;
   margin: 0;
+}
+
+#app {
+  display: grid;
+  place-items: center;
+  min-height: 100lvh;
 }
