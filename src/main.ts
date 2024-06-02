@@ -1,6 +1,6 @@
 import GlslCanvas from "glslCanvas";
 import debounce from "just-debounce-it";
-import frag from "./sketches/circle.frag?raw";
+import frag from "./sketches/240601.frag?raw";
 import "./main.css";
 
 function init() {
