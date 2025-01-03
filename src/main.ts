@@ -1,5 +1,5 @@
 import GlslCanvas from "glslCanvas";
-import frag from "./sketches/240604.frag?raw";
+import frag from "./sketches/240926.frag?raw";
 import "./main.css";
 
 function init() {
@@ -25,7 +25,9 @@ function init() {
     const [app] = entries;
     const width = app.contentRect.width;
     const height = app.contentRect.height;
-    if ((width === startingRect.width, height === startingRect.height)) return;
+    if (width === startingRect.width && height === startingRect.height) return;
+
+    console.log("resizing", width, height);
 
     canvas.width = width;
     canvas.height = height;
